@@ -1,14 +1,19 @@
 import "../styles/Pokemon.css";
 
 function Pokemon(props) {
+  const pokeType = props.types.map((type, i) => {
+    return (
+      <li key={ i }>{ type }</li>
+    )
+  });
+
+  
   return (
-    <li key={props.key} className="pokeCard">
+    <article className="pokeCard">
       <h3> Pokemon name: {props.name}</h3>
       <img src={props.url} alt={props.name} />
-      <p>
-        Type {props.types[0]} {props.types[1]}
-      </p>{" "}
-    </li>
+      <ul>Type:{pokeType}</ul>
+    </article>
   );
 }
 
